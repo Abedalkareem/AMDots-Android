@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<declare-styleable name="AMDots">
+    <!--2-->
+    <attr name="aheadTime" format="integer" />
+    <attr name="spacing" format="integer" />
+    <attr name="animationDuration" format="integer" />
+    <attr name="hidesWhenStopped" format="boolean" />
+    <attr name="colors" format="reference" />
+    <attr name="animationType" format="enum">
+        <enum name="jump" value="0" />
+        <enum name="scale" value="1" />
+        <enum name="shake" value="2" />
+    </attr>
+</declare-styleable>
+</resources>

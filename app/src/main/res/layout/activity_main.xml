@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.dots.abedalkareem.amdotsview.AMDots
+        android:id="@+id/dotsCenter"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:spacing="10"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:animationDuration="500"
+        app:animationType="scale"/>
+
+    <com.dots.abedalkareem.amdotsview.AMDots
+        android:id="@+id/dotsTop"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:spacing="10"
+        android:layout_above="@+id/dotsCenter"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:animationDuration="500"
+        app:animationType="jump"/>
+
+    <com.dots.abedalkareem.amdotsview.AMDots
+        android:id="@+id/dotsBottom"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:spacing="10"
+        android:layout_below="@+id/dotsCenter"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:animationDuration="500"
+        app:animationType="shake"/>
+
+</RelativeLayout>
