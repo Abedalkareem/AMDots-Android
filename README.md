@@ -33,7 +33,7 @@ and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalk
 
 ```
 dependencies {
-    implementation 'com.github.Abedalkareem:AMDots-Android:0.1.0'
+    implementation 'com.github.Abedalkareem:AMDots-Android:0.2.0'
 }
 ```
 
