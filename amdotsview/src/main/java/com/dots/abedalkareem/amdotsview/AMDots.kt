@@ -30,7 +30,7 @@ class AMDots: LinearLayout {
     /** The negative time you need the animation to run before the prevuse animation finish
         (If you set it for 0.2, the next animation will run before 0.2 second before the current animation finish).
         the default value is `0.2`.  */
-    var aheadTime = 200
+    var aheadTime = 250
     /** Animation type, do you want the dot to `jump`, `scale` or `shake`.  */
     var animationType = AnimationType.scale
     /** A Boolean value that controls whether the must be hidden when the animation is stopped.  */
@@ -135,7 +135,7 @@ class AMDots: LinearLayout {
     private fun scaleAnimation() {
         val view = getChildAt(currentViewIndex)
         var duration = (animationDuration/2).toLong()
-        view.animate().scaleX(1.1f).scaleY(1.1f).setDuration(duration).withEndAction {
+        view.animate().scaleX(1.2f).scaleY(1.2f).setDuration(duration).withEndAction {
             view.animate().setStartDelay(duration).scaleX(1f).scaleY(1f).setDuration(duration).start()
         }.start()
     }
@@ -145,7 +145,7 @@ class AMDots: LinearLayout {
         var duration = (animationDuration/2).toLong()
         if (animationType == AnimationType.jump) {
             view.animate().translationYBy(20f).setDuration(duration).withEndAction {
-                view.animate().translationYBy(-20f).setDuration(duration).start()
+                view.animate().setStartDelay(300).translationYBy(-20f).setDuration(duration).start()
             }.start()
         } else {
             view.animate().translationXBy(-10f).setDuration(duration).withEndAction {

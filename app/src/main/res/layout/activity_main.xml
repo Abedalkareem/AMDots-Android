@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/amdots_logo"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"
+        android:layout_marginTop="30dp"/>
+
     <com.dots.abedalkareem.amdotsview.AMDots
         android:id="@+id/dotsCenter"
         android:layout_width="100dp"
@@ -25,7 +34,7 @@
         android:layout_marginBottom="30dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:animationDuration="500"
+        app:animationDuration="800"
         app:animationType="jump"/>
 
     <com.dots.abedalkareem.amdotsview.AMDots
@@ -37,7 +46,7 @@
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:animationDuration="500"
+        app:animationDuration="800"
         app:animationType="shake"/>
 
 </RelativeLayout>
