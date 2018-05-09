@@ -18,11 +18,26 @@ To run the example project, clone the repo, and run AMDots project.
 
 ## Installation
 
-AMDots is available through ****. To install
-it, simply add the following line to your build.gradle:
-
+AMDots is available through jitpack. To install
 <br>
-******
+it, simply add the ```maven { url 'https://jitpack.io' }``` to your build.gradle:
+<br>
+```
+allprojects {
+	repositories {
+		 maven { url 'https://jitpack.io' }
+	}
+}
+```
+<br>
+and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalkareem:AMDots-Android:0.1.0'```
+<br>
+```
+dependencies {
+    implementation 'com.github.Abedalkareem:AMDots-Android:0.1.0'
+}
+```
+<br>
 <br>
 <br>
 
