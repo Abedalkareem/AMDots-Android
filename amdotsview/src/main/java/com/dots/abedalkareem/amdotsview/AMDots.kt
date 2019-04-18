@@ -31,8 +31,8 @@ class AMDots: LinearLayout {
         (If you set it for 0.2, the next animation will run before 0.2 second before the current animation finish).
         the default value is `0.2`.  */
     var aheadTime = 250
-    /** Animation type, do you want the dot to `jump`, `scale` or `shake`.  */
-    var animationType = AnimationType.scale
+    /** Animation type, do you want the dot to `JUMP`, `SCALE` or `SHAKE`.  */
+    var animationType = AnimationType.SCALE
     /** A Boolean value that controls whether the must be hidden when the animation is stopped.  */
     var hidesWhenStopped = true
 
@@ -73,7 +73,7 @@ class AMDots: LinearLayout {
         animationType = AnimationType.values()[type]
 
         val stringColors: Array<CharSequence>? = typedArray.getTextArray(R.styleable.AMDots_colors)
-        var intColors = mutableListOf<Int>()
+        val intColors = mutableListOf<Int>()
 
         if (stringColors != null) {
             for (color in stringColors) {
@@ -94,14 +94,14 @@ class AMDots: LinearLayout {
 
 
     private fun drawCircle() {
-        colors!!.forEachIndexed({ index, color ->
+        colors!!.forEachIndexed { _, color ->
             val view = DotView(context,color)
             view.layoutParams = LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
             val layoutParams =  view.layoutParams as LayoutParams
             layoutParams.setMargins(spacing,spacing,spacing,spacing)
             layoutParams.gravity = Gravity.CENTER_VERTICAL
             addView(view)
-        })
+        }
 
         startAnimation()
     }
@@ -118,9 +118,9 @@ class AMDots: LinearLayout {
         }
 
         when (animationType) {
-            AnimationType.scale -> scaleAnimation()
-            AnimationType.jump -> moveAnimation()
-            AnimationType.shake -> moveAnimation()
+            AnimationType.SCALE -> scaleAnimation()
+            AnimationType.JUMP -> moveAnimation()
+            AnimationType.SHAKE -> moveAnimation()
         }
 
 
@@ -134,7 +134,7 @@ class AMDots: LinearLayout {
 
     private fun scaleAnimation() {
         val view = getChildAt(currentViewIndex)
-        var duration = (animationDuration/2).toLong()
+        val duration = (animationDuration/2).toLong()
         view.animate().scaleX(1.2f).scaleY(1.2f).setDuration(duration).withEndAction {
             view.animate().setStartDelay(duration).scaleX(1f).scaleY(1f).setDuration(duration).start()
         }.start()
@@ -142,8 +142,8 @@ class AMDots: LinearLayout {
 
     private fun moveAnimation() {
         val view = getChildAt(currentViewIndex)
-        var duration = (animationDuration/2).toLong()
-        if (animationType == AnimationType.jump) {
+        val duration = (animationDuration/2).toLong()
+        if (animationType == AnimationType.JUMP) {
             view.animate().translationYBy(20f).setDuration(duration).withEndAction {
                 view.animate().setStartDelay(300).translationYBy(-20f).setDuration(duration).start()
             }.start()
@@ -198,19 +198,17 @@ class AMDots: LinearLayout {
 
 //region AnimationType
 enum class AnimationType {
-    jump, scale, shake
+    JUMP, SCALE, SHAKE
 }
 //endregion
 
 //region DotView
-class DotView: View {
+class DotView(context: Context, private var color: Int) : View(context) {
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private var color: Int
 
-    constructor(context: Context,color: Int) : super(context) {
+    init {
         setWillNotDraw(false)
-        this.color = color
     }
 
     override fun onDraw(canvas: Canvas) {
