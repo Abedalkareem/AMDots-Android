@@ -23,9 +23,9 @@ simply add the ```maven { url 'https://jitpack.io' }``` to your build.gradle:
 
 ```
 allprojects {
-	repositories {
-		 maven { url 'https://jitpack.io' }
-	}
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
 }
 ```
 
@@ -33,7 +33,7 @@ and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalk
 
 ```
 dependencies {
-    implementation 'com.github.Abedalkareem:AMDots-Android:0.2.0'
+  implementation 'com.github.Abedalkareem:AMDots-Android:0.2.0'
 }
 ```
 
