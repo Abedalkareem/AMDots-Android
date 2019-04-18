@@ -29,7 +29,7 @@ allprojects {
 }
 ```
 
-and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalkareem:AMDots-Android:0.1.0'```
+and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalkareem:AMDots-Android:1.0.0'```
 
 ```
 dependencies {
