@@ -16,6 +16,30 @@ AMDots is a loading indicator with dots moving like google loading, there is thr
 
 To run the example project, clone the repo, and run AMDots project.
 
+## How to use
+
+-Add the view to your ```xml```
+
+```
+    <com.dots.abedalkareem.amdotsview.AMDots
+        android:id="@+id/dotsCenter"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:spacing="10" // space between each dot
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:animationDuration="500" // duration for each round
+        app:animationType="scale"/> // type of animation, 
+```
+
+-In you activity just start or stop the animation.
+
+```
+    val dot = findViewById(R.id.dotsCenter)
+    dot.start() // to start
+    dot.stop() // to stop
+```
+
 ## Installation
 
 AMDots is available through jitpack. To install it,
@@ -23,17 +47,17 @@ simply add the ```maven { url 'https://jitpack.io' }``` to your build.gradle:
 
 ```
 allprojects {
-	repositories {
-		 maven { url 'https://jitpack.io' }
-	}
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
 }
 ```
 
-and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalkareem:AMDots-Android:0.1.0'```
+and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalkareem:AMDots-Android:1.0.0'```
 
 ```
 dependencies {
-    implementation 'com.github.Abedalkareem:AMDots-Android:0.1.0'
+  implementation 'com.github.Abedalkareem:AMDots-Android:1.0.0'
 }
 ```
 
