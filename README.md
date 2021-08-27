@@ -35,9 +35,9 @@ To run the example, clone the repo, and run the AMDots project.
 - In you activity just start or stop the animation.
 
 ```kotlin
-val dot = findViewById(R.id.dotsCenter)
-dot.start() 
-dot.stop()
+val dotsView = findViewById(R.id.dotsView)
+dotsView.start() 
+dotsView.stop()
 ```
 
 - To add it programmatically.
