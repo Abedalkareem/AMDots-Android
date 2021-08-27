@@ -57,6 +57,7 @@ class AMDotsView : LinearLayout {
    */
   constructor(context: Context, colors: List<Int>, spacing: Int = 10) : super(context) {
     this.colors = colors
+    this.spacing = spacing
     addCircles()
   }
 
