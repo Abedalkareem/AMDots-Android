@@ -3,7 +3,7 @@
 </p>
 
 <br>
-AMDots is a loading indicator with dots moving like google loading, there is three type of the loading, scale, jump and shake, each one of them gives you a cool loading to show to the user. 
+AMDots is a loading indicator with dots moving like google loading, there are three types of the loading: scale, jump, and shake. 
 <br>
 <br>
 
@@ -14,31 +14,47 @@ AMDots is a loading indicator with dots moving like google loading, there is thr
 
 ## Example
 
-To run the example project, clone the repo, and run AMDots project.
+To run the example, clone the repo, and run the AMDots project.
 
 ## How to use
 
--Add the view to your ```xml```
+- Add the view to your ```xml```
 
-```
-    <com.dots.abedalkareem.amdotsview.AMDots
-        android:id="@+id/dotsCenter"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        app:spacing="10" // space between each dot
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        app:animationDuration="500" // duration for each round
-        app:animationType="scale"/> // type of animation, 
+```xml
+<com.dots.abedalkareem.amdotsview.AMDots
+    android:id="@+id/dotsCenter"
+    android:layout_width="100dp"
+    android:layout_height="50dp"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    app:spacing="10" // space between each dot
+    app:animationDuration="500" // duration for each round
+    app:animationType="scale"/> // type of animation
 ```
 
--In you activity just start or stop the animation.
+- In you activity just start or stop the animation.
 
+```kotlin
+val dot = findViewById(R.id.dotsCenter)
+dot.start() 
+dot.stop()
 ```
-    val dot = findViewById(R.id.dotsCenter)
-    dot.start() // to start
-    dot.stop() // to stop
-```
+
+- To add it programmatically.
+
+```kotlin
+val parent = findViewById<ViewGroup>(R.id.parent)
+val params = RelativeLayout.LayoutParams(200, 100)
+val dotsView = AMDotsView(
+      this, listOf(
+        Color.parseColor("#3cba54"),
+        Color.parseColor("#f4c20d"),
+        Color.parseColor("#db3236")
+    )
+)
+parent.addView(dotsView, params)
+```  
+
 
 ## Installation
 
@@ -53,11 +69,11 @@ allprojects {
 }
 ```
 
-and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalkareem:AMDots-Android:1.0.0'```
+and in  ```dependencies```  add this line  ```implementation 'com.github.Abedalkareem:AMDots-Android:1.0.1'```
 
 ```
 dependencies {
-  implementation 'com.github.Abedalkareem:AMDots-Android:1.0.0'
+  implementation 'com.github.Abedalkareem:AMDots-Android:1.0.1'
 }
 ```
 
