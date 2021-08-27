@@ -10,9 +10,8 @@ import android.util.TypedValue
 import android.view.View
 import android.widget.LinearLayout
 import android.view.Gravity
-import java.util.*
+import java.util.Timer
 import kotlin.concurrent.scheduleAtFixedRate
-
 
 class AMDots : LinearLayout {
 
